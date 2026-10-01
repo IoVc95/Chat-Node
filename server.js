@@ -48,7 +48,7 @@ wss.on("connection", (ws) => {
     }
 
     // Primer mensaje del cliente: definir nombre
-    if (msg.tipo === "unirse") {
+    if (msg.tipo === "ingresa a la sala") {
       ws.nombre = String(msg.nombre || "Anónimo").slice(0, 20);
       broadcast({ tipo: "sistema", texto: `${ws.nombre} se unió al chat` });
       enviarConteo();
